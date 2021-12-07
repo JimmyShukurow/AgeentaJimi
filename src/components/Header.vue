@@ -1,12 +1,16 @@
 <template>
     <div class="header">
-        <div>
+        <div class="logo">
             <img src="@/assets/logo.png" alt="Logo" >
-            Text
+            <div @click="toogleSidebar">
+                <v-icon name="bars"/>
+            </div>
         </div>
         <div class="right-corner">
-            <div>
-                View Website
+            <div class="web-site">
+                <a href="https://ageenta.com">
+                    <v-icon name="globe"/> View Website
+                </a>
             </div> 
             <div>
                 name of user
@@ -18,7 +22,17 @@
 
 <script>
 export default {
-    
+    data(){
+        return{
+            sidebar:true,
+        }
+    },
+    methods: {
+        toogleSidebar(){
+            this.$root.$emit('eventing', this.sidebar);
+            this.sidebar = !this.sidebar;
+        }
+    }
 }
 </script>
 
@@ -27,14 +41,29 @@ export default {
     background: #272727;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     color: blanchedalmond;
 }
 .header img  {
     margin: 0 20px;
     width: 80px;
 }
-.right-corner div{
+.right-corner div, .logo div {
     margin-right: 20px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
 }
-</style>
+.right-corner div:hover {
+    background:gray;
+    cursor: pointer;
+ 
+}
+ a, a:hover, a:focus, a:active {
+     text-decoration: none;
+     color: inherit;
+ }
+ .logo div {
+     margin-left: 50%;
+ }
+ </style>
