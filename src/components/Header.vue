@@ -43,6 +43,8 @@ export default {
     justify-content: space-between;
     align-items: stretch;
     color: blanchedalmond;
+    position: sticky;
+    top:0
 }
 .header img  {
     margin: 0 20px;

@@ -3,7 +3,9 @@
     <Header />
 
     <div class="main"> 
+      <div class="nav">
         <Sidebar />
+      </div>
       <div class="router-view">
             <router-view/>
       </div>
@@ -48,7 +50,7 @@ export default {
   .router-view {
     text-align: center;
     width: 87%;
-    background: #e6e6e6;
+    background: #d5e2e1;
     display: inline-block;
     vertical-align: top;
     height: 100%;
@@ -57,5 +59,8 @@ export default {
   .main {
     display: flex;
     height: 100%;
+  }
+  .nav {
+    width: 13%;
   }
 </style>

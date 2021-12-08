@@ -59,10 +59,10 @@ export default {
         border-bottom: 1px outset #e6e6e641;
     }
     a:hover:not(.router-link-exact-active )  {
-        background: rgb(48, 47, 47);
+        background: rgb(151, 77, 77);
     } 
     .router-link-exact-active {
-        background:	#ff0000;
+        background: rgba(255, 0, 0, 0.596);
     }
     .arrow {
         float: right;
@@ -73,8 +73,8 @@ export default {
         left: -200px;
     }
     .nav {
-        width: 225px;
-        background: rgb(61, 61, 60);
+        width: 240px;
+        background: #2D3737;
         display: inline-block;
         vertical-align: top;
         height: 100%;
