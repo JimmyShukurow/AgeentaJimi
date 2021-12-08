@@ -28,10 +28,17 @@
     <div class="charts">
       <v-frappe-chart
         type="bar"
-        :labels="['SUN', 'MON', 'TUE', 'WEN', 'THU']"
-        :data="[
-            { values: [18, 40, 30, 35, 8] }
-        ]"
+        :labels="labels"
+        :data="value"
+        :height="400"
+        :colors="['#324B4A']"
+      />
+    </div>
+    <div class="charts">
+      <v-frappe-chart
+        type="line"
+        :labels="labels"
+        :data="value"
         :height="400"
         :colors="['#324B4A']"
       />
@@ -45,6 +52,14 @@
 // @ is an alias to /src
 export default {
   name: 'Dashboard',
+  data() {
+    return {
+      labels:['SUN', 'MON', 'TUE', 'WEN', 'THU'],
+      value:[
+        {values: [18, 40, 30, 35, 8]}
+      ]
+    }
+  },
   components: {
     
   },
