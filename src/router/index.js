@@ -7,6 +7,7 @@ import Consults from '../views/Consults.vue'
 import Newsletters from '../views/Newsletters.vue'
 import RealEstate from '../views/RealEstate.vue'
 import StaticBlocks from '../views/StaticBlocks.vue'
+import Testimonials from '../views/Testimonials.vue'
 
 
 Vue.use(VueRouter)
@@ -43,19 +44,10 @@ const routes = [
     name: 'StaticBlocks',
     component: StaticBlocks
   },{
-    path: '/pages',
-    name: 'Pages',
-    component: Pages
-  },{
-    path: '/pages',
-    name: 'Pages',
-    component: Pages
-  },{
-    path: '/pages',
-    name: 'Pages',
-    component: Pages
+    path: '/testimonials',
+    name: 'Testimonials',
+    component: Testimonials
   },
-
 ]
 
 const router = new VueRouter({

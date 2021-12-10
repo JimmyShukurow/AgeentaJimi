@@ -3,8 +3,9 @@
     <h1> This is Dashboard Page </h1>
     <div class="stats">
       <div class="total-properties"> 
+       <img src="../assets/house15.svg"  class="background-icon">
         <div class="data">
-          <div class="number">0</div>  <div>properties</div> 
+            <div class="number">0</div>  <div>properties</div> 
         </div>
       </div>
       <div class="total-properties"> 
@@ -103,6 +104,8 @@ export default {
     border-radius: 10px;
     background:#d5e2e1;
     box-shadow:   9px 9px 18px #828a89, -9px -9px 18px #ffffff;
+    position: relative;
+    overflow: hidden;
   }
   .stats {
     display: flex;
@@ -117,6 +120,7 @@ export default {
     float: right;
     top: 50%;
     transform: translateY(-50%);
+    position: relative;
   }
   .charts {
     margin: 20px;
@@ -131,5 +135,12 @@ export default {
     display: inline-block;
     width: 50%;
   }
-  
+  .total-properties img {
+    position: absolute;
+    width: 200px;
+    background: #d5e2e1;
+    opacity: 0.1;
+    transform: translate(-180px, -60px);
+  }
+
 </style>

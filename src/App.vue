@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <Header />
+    <header>
+      <Header />
+    </header>
 
-    <div class="main"> 
+    <main > 
       <div class="nav">
         <Sidebar />
       </div>
       <div class="router-view">
             <router-view/>
       </div>
-    </div>
+    </main>
     
   </div>
 
@@ -44,9 +46,6 @@ export default {
     margin: 0;
     height: 100%;
   }
-
-
-
   .router-view {
     text-align: center;
     width: 87%;
@@ -56,11 +55,14 @@ export default {
     height: 100%;
     overflow: auto;
   }
-  .main {
+  main {
     display: flex;
     height: 100%;
   }
   .nav {
     width: 240px;
+  }
+  header {
+    z-index: 15;
   }
 </style>

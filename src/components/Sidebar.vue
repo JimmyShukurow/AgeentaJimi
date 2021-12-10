@@ -4,48 +4,28 @@
             <router-link to="/">             <v-icon name="home"/> <span class="nav-name">Dashboard</span> </router-link>
             <router-link to="/pages">        <v-icon name="book"/> <span class="nav-name">Pages</span> </router-link>
             <div class="blog">
-                <div  @click="toggleClass(0)"><router-link to="/blog"><v-icon name="edit"/> <span class="nav-name">Blog</span><v-icon :class="submenu_opened[0].open ? 'arrow-open':'arrow'" name="chevron-left"/></router-link></div>
-                    <div :class="submenu_opened[0].open  ? 'submenu-open' : 'submenu'">
-                        <router-link to="/real-estates">submenu1</router-link>
-                        <router-link to="/real-estates">submenu1</router-link>
-                        <router-link to="/real-estates">submenu1</router-link>
-                        <router-link to="/real-estates">submenu2</router-link>
-                        <router-link to="/real-estates">submenu2</router-link>
-                        <router-link to="/real-estates">submenu2</router-link>
+                <div  @click="toggleClass(0, 'submenu1')"><router-link to="/blog"><v-icon name="edit"/> <span class="nav-name">Blog</span><v-icon :class="submenu_opened[0].open ? 'arrow-open':'arrow'" name="chevron-left"/></router-link></div>
+                    <div :class="submenu_opened[0].open  ? 'submenu-open1' : 'submenu1'" id="submenu1">
+                        <router-link to="/real-estates">Categories</router-link>
+                        <router-link to="/real-estates">Tags</router-link>
+                       
                     </div>
             </div>
             <div class="real-estate">
-                <div  @click="toggleClass(1)"><router-link to="/real-estates"> <v-icon name="bed"/> <span class="nav-name"> Real Estate </span> <v-icon :class="submenu_opened[1].open ? 'arrow-open':'arrow'" name="chevron-left"/></router-link></div>
-                    <div :class="submenu_opened[1].open ? 'submenu-open' : 'submenu'">
+                <div  @click="toggleClass(1, 'submenu2')"><router-link to="/real-estates"> <v-icon name="bed"/> <span class="nav-name"> Real Estate </span> <v-icon :class="submenu_opened[1].open ? 'arrow-open':'arrow'" name="chevron-left"/></router-link></div>
+                    <div :class="submenu_opened[1].open ? 'submenu-open2' : 'submenu2'" id="submenu2">
                         <router-link to="/real-estates">submenu1</router-link>
                         <router-link to="/real-estates">submenu1</router-link>
                         <router-link to="/real-estates">submenu1</router-link>
-                        <router-link to="/real-estates">submenu2</router-link>
-                        <router-link to="/real-estates">submenu2</router-link>
-                        <router-link to="/real-estates">submenu2</router-link>
                     </div>
             </div>
-            <router-link to="/pages">        <v-icon name="comments"/> <span class="nav-name"> Testimonials </span> </router-link>
+            <router-link to="/testimonials">        <v-icon name="comments"/> <span class="nav-name"> Testimonials </span> </router-link>
             <router-link to="/static-blocks"><v-icon name="code"/> <span class="nav-name">Static Blocks </span> </router-link>
             <router-link to="/newsletters">  <v-icon name="newspaper"/> <span class="nav-name">Newsletters</span> </router-link>
             <router-link to="/consults">     <v-icon name="headset"/> <span class="nav-name">Consults</span> </router-link>
-            <router-link to="/pages">        <v-icon name="users"/> <span class="nav-name">Accounts</span></router-link>
-            <router-link to="/pages">        <v-icon name="archive"/> <span class="nav-name">Packages</span></router-link>
-            <router-link to="/pages">        <v-icon name="image"/> <span class="nav-name">Simple Sliders</span></router-link>
-            <router-link to="/pages">        <v-icon name="envelope"/> <span class="nav-name">Contacts</span></router-link>
-            <router-link to="/pages">        <v-icon name="credit-card"/> <span class="nav-name">Payments</span></router-link>
-            <router-link to="/pages">        <v-icon name="globe"/> <span class="nav-name">Locations</span></router-link>
-            <router-link to="/pages">        <v-icon name="photo-video"/> <span class="nav-name">Media</span></router-link>
-            <router-link to="/pages">        <v-icon name="paint-brush"/> <span class="nav-name">Appearence</span></router-link>
-            <router-link to="/pages">        <v-icon name="plug"/> <span class="nav-name">Plugins</span></router-link>
-            <router-link to="/pages">        <v-icon name="language"/> <span class="nav-name">Translations</span></router-link>
-            <router-link to="/pages">        <v-icon name="cogs"/> <span class="nav-name">Settings</span></router-link>
-            <router-link to="/pages">        <v-icon name="user-shield"/> <span class="nav-name">Platform Admisnitrations</span></router-link>
         </div>
     </div>
 </template>
-
-
 <script>
 
 export default {
@@ -65,11 +45,14 @@ export default {
     });
     },
     methods: {
-        toggleClass(index) {
+        toggleClass(index, id) {
             this.submenu_opened[index].open = !this.submenu_opened[index].open;
-            console.log(typeof(this.submenu_opened[index]));
-            console.log(this.submenu_opened[index]);
-
+            if(this.submenu_opened[index].open == false){
+                var x = document.getElementById(id);
+                setTimeout(function(){x.style.display = "none"}, 300);
+            } else{
+                document.getElementById(id).style.display = "block";
+            }
         }
     }
 
@@ -117,34 +100,63 @@ export default {
         height: 100%;
         overflow: hidden;
     }
-    .submenu{
-        animation-name: close;
+    .submenu1 {
+        animation-name: close1;
         animation-duration: 0.3s;
         animation-timing-function: ease-in;
         height: 0;
+        display: none;
         border-bottom: 1px outset #e6e6e641;
     }
-    .submenu-open {
+    .submenu-open1 {
        transform-origin: top center;
-        animation-name: open;
+        animation-name: open1;
         animation-duration: 0.3s;
-        animation-timing-function: linear;
-        display: block;
-        height: inherit;
+        animation-timing-function: ease-in;
+        height: 76px;
         border-bottom: 1px outset #e6e6e641;
-      
     }
-    .submenu-open a, .submenu a {
-        border-bottom: none;
-    }
-    @keyframes open {
+
+    @keyframes open1 {
         from { height: 0;}
-        to { height: 210px;}
+        to { height: 76px;}
     }
-    @keyframes close {
-        from { height: 210px; }
+    @keyframes close1 {
+        from { height: 76px; }
         to { height: 0; }
     }
+
+
+    .submenu2 {
+        animation-name: close2;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in;
+        height: 0;
+        display: none;
+        border-bottom: 1px outset #e6e6e641;
+    }
+   
+    .submenu-open2 {
+       transform-origin: top center;
+        animation-name: open2;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in;
+        height: 114px;
+        border-bottom: 1px outset #e6e6e641;
+    }
+    @keyframes open2 {
+        from { height: 0;}
+        to { height: 114px;}
+    }
+    @keyframes close2 {
+        from { height: 114px; }
+        to { height: 0; }
+    }
+    .submenu-open1 a, .submenu1 a, .submenu-open2 a, .submenu2 a {
+        border-bottom: none;
+        padding-left: 20px
+    }
+  
     
 
 </style>

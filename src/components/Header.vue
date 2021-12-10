@@ -44,7 +44,8 @@ export default {
     align-items: stretch;
     color: blanchedalmond;
     position: sticky;
-    top:0
+    top:0;
+    z-index: 20;
 }
 .header img  {
     margin: 0 20px;
