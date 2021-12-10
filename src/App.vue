@@ -61,6 +61,6 @@ export default {
     height: 100%;
   }
   .nav {
-    width: 13%;
+    width: 240px;
   }
 </style>

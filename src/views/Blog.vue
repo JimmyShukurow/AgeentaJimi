@@ -1,5 +1,13 @@
 <template>
-  <div class="about">
-    <h1>This is an Blog page</h1>
+  <div>
   </div>
 </template>
+
+<script>
+export default {
+}
+</script>
+
+<style scoped>
+
+</style>
