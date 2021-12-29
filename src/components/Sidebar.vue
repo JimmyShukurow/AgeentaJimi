@@ -14,12 +14,16 @@
             <div class="real-estate">
                 <div  @click="toggleClass(1, 'submenu2')"><router-link to="/real-estates"> <v-icon name="bed"/> <span class="nav-name"> Real Estate </span> <v-icon :class="submenu_opened[1].open ? 'arrow-open':'arrow'" name="chevron-left"/></router-link></div>
                     <div :class="submenu_opened[1].open ? 'submenu-open2' : 'submenu2'" id="submenu2">
-                        <router-link to="/real-estates">submenu1</router-link>
-                        <router-link to="/real-estates">submenu1</router-link>
-                        <router-link to="/real-estates">submenu1</router-link>
+                        <router-link to="/properties">Properties</router-link>
+                        <router-link to="/features">Features</router-link>
+                        <router-link to="/facilities">Facilities</router-link>
+                        <router-link to="/categories">Categories</router-link>
+                        <router-link to="/types">Types</router-link>
+                        <router-link to="/reviews">Reviews</router-link>
+                        <router-link to="/settings">Settings</router-link>
                     </div>
             </div>
-            <router-link to="/testimonials">        <v-icon name="comments"/> <span class="nav-name"> Testimonials </span> </router-link>
+            <router-link to="/testimonials"> <v-icon name="comments"/> <span class="nav-name"> Testimonials </span> </router-link>
             <router-link to="/static-blocks"><v-icon name="code"/> <span class="nav-name">Static Blocks </span> </router-link>
             <router-link to="/newsletters">  <v-icon name="newspaper"/> <span class="nav-name">Newsletters</span> </router-link>
             <router-link to="/consults">     <v-icon name="headset"/> <span class="nav-name">Consults</span> </router-link>
@@ -109,7 +113,7 @@ export default {
         border-bottom: 1px outset #e6e6e641;
     }
     .submenu-open1 {
-       transform-origin: top center;
+        transform-origin: top center;
         animation-name: open1;
         animation-duration: 0.3s;
         animation-timing-function: ease-in;
@@ -141,15 +145,15 @@ export default {
         animation-name: open2;
         animation-duration: 0.3s;
         animation-timing-function: ease-in;
-        height: 114px;
+        height: 266px;
         border-bottom: 1px outset #e6e6e641;
     }
     @keyframes open2 {
         from { height: 0;}
-        to { height: 114px;}
+        to { height: 266px;}
     }
     @keyframes close2 {
-        from { height: 114px; }
+        from { height: 266px; }
         to { height: 0; }
     }
     .submenu-open1 a, .submenu1 a, .submenu-open2 a, .submenu2 a {
